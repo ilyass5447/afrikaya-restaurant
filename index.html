@@ -4,132 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AFRIKAYA | Restaurant Africain</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffaf0;
+      color: #1a202c;
+      line-height: 1.6;
+    }
+    header, footer {
+      background: #d97706;
+      color: white;
+      padding: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: url('https://s11.aconvert.com/convert/p3r68-cdx67/87b4j-tjj8p.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-content {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 1rem;
+    }
+    section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    .card, .form-control {
+      background: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-control input,
+    .form-control textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      margin-top: 0.5rem;
+      border-radius: 0.375rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #facc15;
+      color: black;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #eab308;
+    }
+    img.responsive {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+    h2, h3 {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
-<body class="bg-yellow-50 text-gray-900">
+<body>
 
-  <!-- Header -->
-  <header class="bg-yellow-600 text-white p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <img src="https://s11.aconvert.com/convert/p3r68-cdx67/v3ehh-j3cfo.jpg" alt="Logo du restaurant AFRIKAYA" class="h-12 w-auto" />
-        <h1 class="text-2xl font-bold">AFRIKAYA</h1>
-      </div>
-      <nav aria-label="Navigation principale">
-        <ul class="flex space-x-6 text-lg">
-          <li><a href="#accueil" class="hover:underline transition duration-300">Accueil</a></li>
-          <li><a href="#menu" class="hover:underline transition duration-300">Menu</a></li>
-          <li><a href="#apropos" class="hover:underline transition duration-300">À propos</a></li>
-          <li><a href="#galerie" class="hover:underline transition duration-300">Galerie</a></li>
-          <li><a href="#contact" class="hover:underline transition duration-300">Contact</a></li>
-        </ul>
-      </nav>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+      <img src="https://s11.aconvert.com/convert/p3r68-cdx67/v3ehh-j3cfo.jpg" alt="Logo" style="height: 50px;">
+      <h1 style="font-size: 1.75rem;">AFRIKAYA</h1>
     </div>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="accueil" class="bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('https://s11.aconvert.com/convert/p3r68-cdx67/87b4j-tjj8p.jpg');">
-    <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center">
-      <h2 class="text-4xl text-white font-bold mb-4">Bienvenue chez AFRIKAYA</h2>
-      <p class="text-white text-lg mb-6">Découvrez la richesse de la cuisine africaine avec un goût inoubliable</p>
-      <a href="#menu" class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-full font-semibold">Voir le Menu</a>
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Bienvenue chez AFRIKAYA</h2>
+      <p style="margin-bottom: 1.5rem;">Découvrez la richesse de la cuisine africaine avec un goût inoubliable</p>
+      <a href="#menu" class="btn">Voir le Menu</a>
     </div>
   </section>
 
-  <!-- Menu Section -->
-  <section id="menu" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Notre Menu</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Efo Riro (Viande)</h3>
-          <p>Viande, huile de palme, épinards, poisson fumé ou crevettes séchées.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Efo Riro (Poulet)</h3>
-          <p>Poulet, huile de palme, épinards, poisson fumé ou crevettes séchées.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Suya Bœuf</h3>
-          <p>Bœuf, poudre d’arachide, épices (yaji), oignons.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Jollof Rice</h3>
-          <p>Riz, tomates, poivrons, oignons, épices.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Pastilla au poisson</h3>
-          <p>Poisson, vermicelles, olives, citron confit, feuilles de brick.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Couscous Tfaya</h3>
-          <p>Semoule, viande, oignons caramélisés, raisins secs, pois chiches, cannelle.</p>
-        </div>
-      </div>
+  <section id="menu">
+    <h2 class="text-center">Notre Menu</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Efo Riro (Viande)</h3><p>Viande, huile de palme, épinards, poisson fumé ou crevettes séchées.</p></div>
+      <div class="card"><h3>Efo Riro (Poulet)</h3><p>Poulet, huile de palme, épinards, poisson fumé ou crevettes séchées.</p></div>
+      <div class="card"><h3>Suya Bœuf</h3><p>Bœuf, poudre d’arachide, épices (yaji), oignons.</p></div>
+      <div class="card"><h3>Jollof Rice</h3><p>Riz, tomates, poivrons, oignons, épices.</p></div>
+      <div class="card"><h3>Pastilla au poisson</h3><p>Poisson, vermicelles, olives, citron confit, feuilles de brick.</p></div>
+      <div class="card"><h3>Couscous Tfaya</h3><p>Semoule, viande, oignons caramélisés, raisins secs, pois chiches, cannelle.</p></div>
     </div>
   </section>
 
-  <!-- À propos Section -->
-  <section id="apropos" class="py-16 bg-yellow-100">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">À propos de nous</h2>
-      <p class="text-lg max-w-3xl mx-auto">
-        AFRIKAYA est un restaurant dédié à la célébration de la cuisine africaine authentique. Nous mélangeons traditions, saveurs et hospitalité pour vous offrir une expérience culinaire chaleureuse et inoubliable. Chaque plat raconte une histoire venue d’Afrique.
-      </p>
+  <section id="apropos">
+    <h2 class="text-center">À propos de nous</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+      AFRIKAYA est un restaurant dédié à la célébration de la cuisine africaine authentique. Nous mélangeons traditions, saveurs et hospitalité pour vous offrir une expérience culinaire chaleureuse et inoubliable.
+    </p>
+  </section>
+
+  <section id="galerie">
+    <h2 class="text-center">Galerie</h2>
+    <div class="grid grid-3">
+      <img class="responsive" src="https://source.unsplash.com/400x300/?african,food" alt="Plat africain" />
+      <img class="responsive" src="https://source.unsplash.com/400x300/?cuisine,africaine" alt="Cuisine africaine" />
+      <img class="responsive" src="https://source.unsplash.com/400x300/?restaurant,african" alt="Restaurant africain" />
     </div>
   </section>
 
-  <!-- Galerie Section -->
-  <section id="galerie" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Galerie</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="https://source.unsplash.com/400x300/?african,food" alt="plat africain" class="rounded-lg shadow transform hover:scale-105 transition-transform duration-300" />
-        <img src="https://source.unsplash.com/400x300/?cuisine,africaine" alt="cuisine africaine" class="rounded-lg shadow transform hover:scale-105 transition-transform duration-300" />
-        <img src="https://source.unsplash.com/400x300/?restaurant,african" alt="restaurant africain" class="rounded-lg shadow transform hover:scale-105 transition-transform duration-300" />
-      </div>
-    </div>
+  <section id="contact">
+    <h2 class="text-center">Contact & Réservation</h2>
+    <form class="form-control" style="max-width: 600px; margin: auto;">
+      <label>Nom<input type="text" required placeholder="Votre nom" /></label>
+      <label>Email<input type="email" required placeholder="Votre email" /></label>
+      <label>Message<textarea rows="5" required placeholder="Votre message ou réservation..."></textarea></label>
+      <button type="submit" class="btn" style="margin-top: 1rem;">Envoyer</button>
+    </form>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-yellow-100">
-    <div class="container mx-auto px-4 max-w-xl">
-      <h2 class="text-3xl font-bold text-center mb-6">Contact & Réservation</h2>
-      <form class="bg-white p-8 rounded-lg shadow-lg space-y-6">
-        <div>
-          <label for="nom" class="block text-gray-700 font-semibold mb-2">Nom</label>
-          <input id="nom" name="nom" type="text" required
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Votre nom" />
-        </div>
-        <div>
-          <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-          <input id="email" name="email" type="email" required
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Votre email" />
-        </div>
-        <div>
-          <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
-          <textarea id="message" name="message" rows="5" required
-            class="w-full p-3 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            placeholder="Votre message ou réservation..."></textarea>
-        </div>
-        <button type="submit"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-md transition-colors duration-300">
-          Envoyer
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-yellow-600 text-white text-center p-4 mt-10">
-    <p>&copy; 2025 AFRIKAYA. Tous droits réservés.</p>
+  <footer>
+    <p style="text-align: center;">&copy; 2025 AFRIKAYA. Tous droits réservés.</p>
   </footer>
 
 </body>
 </html>
-
